@@ -13,7 +13,8 @@
         args.filterMode === "tags"
           ? "discovery.latest"
           : router.currentRouteName;
-      return router.urlFor(routeName);
+		let id = routeName.slice(str.lastIndexOf('/') + 1);
+      return router.urlFor(routeName, { queryParams: { id: 1 } });
     }
   });
   api.modifyClass("component:navigation-item", {
