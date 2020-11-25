@@ -14,7 +14,8 @@
           ? "discovery.latest"
           : router.currentRouteName;
 		let id = routeName.slice(str.lastIndexOf('/') + 1);
-      return router.urlFor(routeName, { queryParams: { id: 1 } });
+		let routeNameFinal = routeName.concat(id);
+      return router.urlFor(routeNameFinal);
     }
   });
   api.modifyClass("component:navigation-item", {
