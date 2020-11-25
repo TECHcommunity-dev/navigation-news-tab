@@ -13,7 +13,7 @@
         args.filterMode === "tags"
           ? "discovery.latest"
           : router.currentRouteName;
-      return router.urlFor(routeName, { queryParams: { max_posts: 2 } });
+      return router.urlFor(routeName);
     }
   });
   api.modifyClass("component:navigation-item", {
