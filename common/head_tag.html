@@ -10,9 +10,8 @@
     },
     customHref: function(category, args, router) {
 		let routeName = router.currentRouteName;
-		let tag_id = routeName.toString();
-		return window.history.replaceState( {} , 'routeName', '/tags/c/news/7/' );
-		/*router.urlFor(routeName, { path: '/tags/c/news/7/' });*/
+		let routeNames = (routeName.toString()).replace("/tag/i", "/tags/c/news/7/");
+		return router.urlFor(routeNames);
     }
   });
   api.modifyClass("component:navigation-item", {
