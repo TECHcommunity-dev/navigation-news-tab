@@ -9,7 +9,7 @@
       return exclusionList.indexOf(router.currentURL) < 0;
     },
     customHref: function(category, args, router) {
-      let routeName = router.currentRouteName;
+      let routeName = router.get("tag_id");
       return router.urlFor(routeName);
     }
   });
