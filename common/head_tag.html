@@ -10,7 +10,7 @@
     },
     customHref: function(category, args, router) {
 		let routeName = router.currentRouteName;
-		return router.urlFor(routeName, { path: '/:tag_id' });
+		return router.urlFor(routeName, { path: '/:tags_id' });
     }
   });
   api.modifyClass("component:navigation-item", {
