@@ -9,11 +9,7 @@
       return exclusionList.indexOf(router.currentURL) < 0;
     },
     customHref: function(category, args, router) {
-      let routeName =
-        args.filterMode === "tags"
-          ? "discovery.latest"
-          : router.currentRouteName;
-		
+      let routeName = router.currentRouteName;
       return router.urlFor(routeName);
     }
   });
