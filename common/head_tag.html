@@ -9,10 +9,11 @@
       return exclusionList.indexOf(router.currentURL) < 0;
     },
     customHref: function(category, args, router) {
-	   let routeName =
-        args.filterMode === "tags"
-          ? "discovery.latest"
-          : '/c/news/7';
+		if (
+        window.location.search.indexOf("/tag/") > -1
+		) {
+	   let routeName = '/c/news/7';
+	   }
       return router.transitionTo(routeName);
     }
   });
