@@ -9,7 +9,7 @@
       return exclusionList.indexOf(router.currentURL) < 0;
     },
     customHref: function(category, args, router) {
-		let routeName = router.currentRouteName;
+		let routeName = router.replaceWith("/tags/c/news/7/");
 		return router.urlFor(routeName);
     }
   });
