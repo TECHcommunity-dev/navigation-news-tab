@@ -10,7 +10,7 @@
     },
     customHref: function(category, args, router) {
 		let routeName = router.currentRouteName;
-		let routeNames = (routeName.toString()).replace("/tag/i", "/tags/c/news/7/");
+		let routeNames = (routeName.toString()).replace("/tag/", "/tags/c/news/7/");
 		return router.urlFor(routeNames);
     }
   });
