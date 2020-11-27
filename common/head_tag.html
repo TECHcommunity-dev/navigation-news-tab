@@ -1,4 +1,3 @@
-  
 <script type="text/discourse-plugin" version="0.8">
   let exclusionList = settings.exclusions.split("|");
   api.addNavigationBarItem({
@@ -9,7 +8,7 @@
       return exclusionList.indexOf(router.currentURL) < 0;
     },
     customHref: function(category, args, router) {
-		let routeName = router.currentRouteName;
+		let routeName = "/tags/c/news/7/{TAG-NAME}";
 		return router.urlFor(routeName);
     }
   });
