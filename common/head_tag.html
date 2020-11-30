@@ -8,7 +8,9 @@
       return exclusionList.indexOf(router.currentURL) < 0;
     },
     customHref: function(category, args, router) {
-	return `/tags/news/7/${tag.id}`;
+		let routeName = (router.currentURL).toString();
+		let tag = routeName.substring(routeName.lastIndexOf("/") + 1);
+		return `/tags/news/7/`+tag;
     }
   });
   api.modifyClass("component:navigation-item", {
@@ -25,3 +27,4 @@
     })
   });
 </script>
+
