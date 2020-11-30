@@ -9,7 +9,7 @@
     },
     customHref: function(category, args, router) {
 		let routeName = router.currentURL;
-		let tag = routeName.substring(routeName.lastIndexOf("/") + 1);
+		let tag = routeName.split("/")[1];
 		return `/tags/c/news/7/`+tag;
     }
   });
