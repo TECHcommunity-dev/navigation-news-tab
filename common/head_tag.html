@@ -8,8 +8,9 @@
       return exclusionList.indexOf(router.currentURL) < 0;
     },
     customHref: function(category, args, router) {
-		let routeName = router.currentRouteName;
-		return router.urlFor(routeName);
+		/*let routeName = router.currentURL;*/
+		/*let tag = routeName.substring(routeName.lastIndexOf("/") + 1);*/
+		return `techcommunity.staged-by-discourse.com/tags/news/7/${tag.id}`;
     }
   });
   api.modifyClass("component:navigation-item", {
