@@ -17,8 +17,8 @@
     active: Ember.computed("contentFilterMode", "filterMode", function() {
       let contentFilterMode = this.get("content").get("filterMode");
       if (
-        window.location.search &&
-        window.location.search.indexOf("/tags/c/news/7/") > -1
+        
+        window.location.href.indexOf("/tags/c/news/7/") > -1
       ) {
         return contentFilterMode === "news";
       } else {
