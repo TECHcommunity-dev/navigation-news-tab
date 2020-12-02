@@ -1,19 +1,19 @@
 <script type="text/discourse-plugin" version="0.8">
-  let exclusionList = settings.exclusions.split("|");
   api.addNavigationBarItem({
-    name: "news",
-    displayName: I18n.t(themePrefix("news.title")),
-    title: I18n.t(themePrefix("news.help")),
-    customFilter: (category, args, router) => {
-      return exclusionList.indexOf(router.currentURL) < 0;
-    },
-    customHref: function(category, args, router) {
-		let routeName = router.currentURL;
-		let tag = routeName.split("/")[2];
-		return `/tags/c/news/7/`+tag;
-    }
+  	name: "link-to-news-category",
+  	displayName: "News",
+  	title: "link description on hover",
+  	init: (navItem, category) => {
+    		navItem.href = `/tags/c/news/${navItem.tagId}`;
+  	},
+  	customFilter: (category, args) => {
+    		const tag = args.tagId;
+    		const categoryCheck = category && category.name !== "News";
+    		const tagCheck = tag && tag !== "none" && tag !== "all";
+    		return category ? categoryCheck && tagCheck : tagCheck;
+  	}
   });
-  api.modifyClass("component:navigation-item", {
+  /*api.modifyClass("component:navigation-item", {
     active: Ember.computed("contentFilterMode", "filterMode", function() {
       let contentFilterMode = this.get("content").get("filterMode");
       if (
@@ -25,6 +25,6 @@
         return this._super(contentFilterMode, this.get("filterMode"));
       }
     })
-  });
+  });*/
 </script>
 
