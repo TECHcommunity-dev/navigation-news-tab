@@ -1,17 +1,21 @@
 <script type="text/discourse-plugin" version="0.8">
-  api.addNavigationBarItem({
-  	name: "link-to-news-category",
-  	displayName: "News",
-  	title: "link description on hover",
-  	init: (navItem, category) => {
-    		navItem.href = `/tags/c/news/${navItem.tagId}`;
-  	},
-  	customFilter: (category, args) => {
-    		const tag = args.tagId;
-    		const categoryCheck = category && category.name !== "News";
-    		const tagCheck = tag && tag !== "none" && tag !== "all";
-    		return category ? categoryCheck && tagCheck : tagCheck;
-  	}
-  });
+api.addNavigationBarItem({
+  name: "link-to-news-category",
+  displayName: "News",
+  title: "link description on hover",
+  init: (navItem, category) => {
+	navItem.href = `/tags/c/news/${navItem.tagId}`;
+  },
+  customFilter: (category, args) => {
+	const tag = args.tagId;
+    const tagCheck = tag && tag !== "none" && tag !== "all";
+    return tagCheck;
+  },
+  forceActive: (category, args, router) => {
+    const categoryCheck = category && category.name === "News";
+    const urlCheck = router.currentURL.indexOf(`/c/news/${args.tagId}`);
+    const filterCheck = router.currentRouteName === "tags.showCategory";
+    return categoryCheck && urlCheck && filterCheck;
+  }
+});
 </script>
-
