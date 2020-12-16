@@ -18,4 +18,24 @@ api.addNavigationBarItem({
     return categoryCheck && urlCheck && filterCheck;
   }
 });
+
+api.addNavigationBarItem({
+  name: "link-to-forum-category",
+  displayName: "Forum",
+  title: "link description on hover",
+  init: (navItem, category) => {
+	navItem.href = `/tags/c/forum/${navItem.tagId}`;
+  },
+  customFilter: (category, args) => {
+	const tag = args.tagId;
+    const tagCheck = tag && tag !== "none" && tag !== "all";
+    return tagCheck;
+  },
+  forceActive: (category, args, router) => {
+    const categoryCheck = category && category.name === "Forum";
+    const urlCheck = router.currentURL.indexOf(`/c/forum/${args.tagId}`);
+    const filterCheck = router.currentRouteName === "tags.showCategory";
+    return categoryCheck && urlCheck && filterCheck;
+  }
+});
 </script>
