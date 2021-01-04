@@ -1,14 +1,13 @@
 <script type="text/discourse-plugin" version="0.8">
 
 api.addNavigationBarItem({
+if ( navItem.tagId == "webMethods") {
   name: "link-to-knowledge-base-category",
   displayName: "Knowledge base",
   title: "Knowledge base",
   
-  init: (navItem, category) => {
-  	if ( navItem.tagId == "webMethods") {
+  init: (navItem, category) => {  	
 	navItem.href = `/tags/c/knowledge-base/${navItem.tagId}`;
-	}
   },
   customFilter: (category, args) => {
 	const tag = args.tagId;
@@ -20,6 +19,7 @@ api.addNavigationBarItem({
     const urlCheck = router.currentURL.indexOf(`/c/knowledge-base/${args.tagId}`);
     const filterCheck = router.currentRouteName === "tags.showCategory";
     return categoryCheck && urlCheck && filterCheck;
+  }
   }
 });
 
