@@ -1,9 +1,10 @@
 <script type="text/discourse-plugin" version="0.8">
-if ( tagId == 4 ) {
+
 api.addNavigationBarItem({
   name: "link-to-knowledge-base-category",
   displayName: "Knowledge base",
   title: "Knowledge base",
+  if ( tagId == 4 ) { return; }
   init: (navItem, category) => {
 	navItem.href = `/tags/c/knowledge-base/${navItem.tagId}`;
   },
@@ -19,7 +20,7 @@ api.addNavigationBarItem({
     return categoryCheck && urlCheck && filterCheck;
   }
 });
-}
+
 
 api.addNavigationBarItem({
   name: "link-to-forum-category",
