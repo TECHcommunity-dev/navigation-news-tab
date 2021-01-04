@@ -4,8 +4,9 @@ api.addNavigationBarItem({
   name: "link-to-knowledge-base-category",
   displayName: "Knowledge base",
   title: "Knowledge base",
-  if ( tagId == 4 ) { return; }
+  
   init: (navItem, category) => {
+  	if ( navItem.tagId ) { return; }
 	navItem.href = `/tags/c/knowledge-base/${navItem.tagId}`;
   },
   customFilter: (category, args) => {
