@@ -1,0 +1,22 @@
+body.tags-page #navigation-bar li[title="News & Announcements"] {
+    display: none;
+}
+
+body.tags-page.tag-webMethods #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-webMethods-io-Integration #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-webMethods-io-B2B #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-Integration-and-ESB #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-B2B-Integration #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-API-Management #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-IoT #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-Cumulocity-IoT #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-TrendMiner #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-Streaming-Analytics-Apama #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-Adabas-Natural #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-Adabas #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-Natural #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-NaturalONE #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-alfabet #navigation-bar li[title="News & Announcements"],
+body.tags-page.tag-ARIS #navigation-bar li[title="News & Announcements"] {
+	display: list-item !important;
+}
