@@ -2,6 +2,7 @@
 
 This Discourse component adds additional filters to the navigation:
 
+* All
 * News & Announcements
 * Forum discussions
 * Knowledge base
